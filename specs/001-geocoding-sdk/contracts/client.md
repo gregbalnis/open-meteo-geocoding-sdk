@@ -1,3 +1,4 @@
+```go
 package geocoding
 
 import (
@@ -22,6 +23,7 @@ type Client interface {
 
 // NewClient creates a new geocoding client with the given options.
 func NewClient(opts ...Option) *ClientImpl {
-    // Implementation details hidden in contract
-    return &ClientImpl{}
+	// Implementation details hidden in contract
+	return &ClientImpl{}
 }
+```
