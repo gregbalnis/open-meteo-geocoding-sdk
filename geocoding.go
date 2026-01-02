@@ -44,6 +44,11 @@ func NewClient(opts ...Option) *Client {
 // name: The location name to search for.
 // opts: Optional parameters (pass nil for defaults).
 func (c *Client) Search(ctx context.Context, name string, opts *SearchOptions) ([]Location, error) {
+
+	if name == "" {
+		return nil, fmt.Errorf("%w: name cannot be empty", ErrInvalidParameter)
+	}
+
 	select {
 	case c.sem <- struct{}{}:
 		defer func() { <-c.sem }()

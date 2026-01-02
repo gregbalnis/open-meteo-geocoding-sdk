@@ -3,6 +3,9 @@ package geocoding
 import (
 	"context"
 	"encoding/json"
+	"errors"
+
+	// "errors"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -168,5 +171,16 @@ func TestAPIError_Error(t *testing.T) {
 	}
 	if err.Error() != "api error: Something went wrong" {
 		t.Errorf("Expected error string 'api error: Something went wrong', got '%s'", err.Error())
+	}
+}
+
+func TestSearch_EmptyName(t *testing.T) {
+	client := NewClient()
+	_, err := client.Search(context.Background(), "", nil)
+	if err == nil {
+		t.Fatal("Expected error for empty name, got nil")
+	}
+	if !errors.Is(err, ErrInvalidParameter) {
+		t.Errorf("Expected ErrInvalidParameter, got %v", err)
 	}
 }
