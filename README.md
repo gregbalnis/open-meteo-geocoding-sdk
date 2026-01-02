@@ -1,6 +1,11 @@
 # Open Meteo Geocoding SDK
 
-A Go SDK for the Open Meteo Geocoding API.
+<p align="center">
+    <a href="https://github.com/gregbalnis/open-meteo-geocoding-sdk/actions/workflows/release.yml"><img src="https://github.com/gregbalnis/open-meteo-geocoding-sdk/actions/workflows/release.yml/badge.svg" alt="Release"/></a>
+    <a href="https://github.com/gregbalnis/open-meteo-geocoding-sdk/blob/main/LICENSE"><img src="https://img.shields.io/github/license/gregbalnis/open-meteo-geocoding-sdk" alt="License"/></a>
+</p>
+
+A Go SDK for the [Open Meteo Geocoding API](https://open-meteo.com/en/docs/geocoding-api).
 
 ## Installation
 
@@ -8,7 +13,9 @@ A Go SDK for the Open Meteo Geocoding API.
 go get github.com/gregbalnis/open-meteo-geocoding-sdk
 ```
 
-## Usage
+**Requirements**: Go 1.21 or later
+
+## Quick Start
 
 ```go
 package main
@@ -49,3 +56,31 @@ func main() {
 	}
 }
 ```
+
+## API Reference
+
+See [GoDoc](https://pkg.go.dev/github.com/gregbalnis/open-meteo-geocoding-sdk) for complete API documentation.
+
+## Development
+
+```bash
+# Run tests
+make test
+
+# Run linter
+make lint
+
+# Check coverage (requires 80%)
+make coverage
+
+# Clean artifacts
+make clean
+```
+
+## License
+
+This project is licensed under the terms of the MIT open source license. Please refer to the [LICENSE](https://github.com/gregbalnis/open-meteo-geocoding-sdk/blob/main/LICENSE) file for the full terms.
+
+## Contributing
+
+Contributions welcome! Please open an issue or pull request.
