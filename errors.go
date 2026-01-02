@@ -14,7 +14,7 @@ var (
 
 // APIError represents an error returned by the Open Meteo API.
 type APIError struct {
-	Reason string
+	Reason string `json:"reason"`
 }
 
 func (e *APIError) Error() string {
