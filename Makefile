@@ -5,6 +5,10 @@ test:
 	@echo "Running tests..."
 	go test -v -race ./...
 
+test-integration:
+	@echo "Running integration tests..."
+	go test -v -tags=integration ./...
+
 # Run linter (requires golangci-lint installed)
 lint:
 	@echo "Running linter..."
@@ -33,8 +37,9 @@ clean:
 # Display available targets
 help:
 	@echo "Available targets:"
-	@echo "  test     - Run tests with race detector"
-	@echo "  lint     - Run golangci-lint"
-	@echo "  coverage - Generate coverage report (requires 80%)"
-	@echo "  clean    - Remove build artifacts"
-	@echo "  help     - Display this help message"
+	@echo "  test             - Run tests with race detector"
+	@echo "  test-integration - Run integration tests"
+	@echo "  lint             - Run golangci-lint"
+	@echo "  coverage         - Generate coverage report (requires 80%)"
+	@echo "  clean            - Remove build artifacts"
+	@echo "  help             - Display this help message"
