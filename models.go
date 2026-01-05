@@ -9,6 +9,10 @@ type Location struct {
 	Elevation   float64 `json:"elevation"`
 	Country     string  `json:"country"`
 	CountryCode string  `json:"country_code"`
+	Admin1      string  `json:"admin1"` // first-order administrative division (https://www.geonames.org/export/codes.html)
+	Admin2      string  `json:"admin2"` // second-order administrative division
+	Admin3      string  `json:"admin3"` // third-order administrative division
+	Admin4      string  `json:"admin4"` // fourth-order administrative division
 }
 
 // searchResponse matches the JSON envelope from the API.

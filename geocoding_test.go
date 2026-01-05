@@ -33,6 +33,9 @@ func TestSearch_Basic(t *testing.T) {
 					Longitude:   13.41053,
 					CountryCode: "DE",
 					Country:     "Deutschland",
+					Admin1:      "State of Berlin",
+					Admin3:      "Berlin, Stadt",
+					Admin4:      "Berlin",
 				},
 			},
 		}
@@ -56,6 +59,15 @@ func TestSearch_Basic(t *testing.T) {
 	}
 	if loc.CountryCode != "DE" {
 		t.Errorf("Expected country code DE, got %s", loc.CountryCode)
+	}
+	if loc.Admin1 != "State of Berlin" {
+		t.Errorf("Expected admin1 State of Berlin, got %s", loc.Admin1)
+	}
+	if loc.Admin3 != "Berlin, Stadt" {
+		t.Errorf("Expected admin3 Berlin, Stadt, got %s", loc.Admin3)
+	}
+	if loc.Admin4 != "Berlin" {
+		t.Errorf("Expected admin4 Berlin, got %s", loc.Admin4)
 	}
 }
 
